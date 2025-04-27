@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #38bdf8);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  min-height: 100vh;
+  padding-top: 50px;
+  color: white;
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8;
+}
+
+.square {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffffff55;
+  border-radius: 16px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  width: 80px;
+  height: 80px;
+  margin: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.square:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px #4ade80;
+}
+
+.board-row {
+  display: flex;
+}
+
+.winner-square {
+  background: linear-gradient(45deg, #4ade80, #38bdf8);
+  border: 2px solid #4ade80;
+  animation: winnerGlow 1s infinite alternate;
+}
+
+@keyframes winnerGlow {
+  from {
+    box-shadow: 0 0 10px #4ade80, 0 0 20px #38bdf8;
+  }
+  to {
+    box-shadow: 0 0 20px #4ade80, 0 0 40px #38bdf8;
+  }
+}
+
+.game-info {
+  margin-top: 30px;
+}
+
+.game-info ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+.game-info li {
+  margin-bottom: 12px;
+}
+
+.game-info button {
+  background: linear-gradient(45deg, #38bdf8, #4ade80);
+  color: black;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.4s;
+}
+
+.game-info button:hover {
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  transform: scale(1.1);
+}
